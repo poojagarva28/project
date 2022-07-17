@@ -34,26 +34,65 @@ async function fetchData() {
             tbody.innerHTML += tr;
           });
         } else if (checkbox[0].checked) {
+          tbody.innerHTML = "";
           let d = new Date();
           const monthNames = [
-            "January",
-            "February",
-            "March",
-            "April",
+            "Jan",
+            "Feb",
+            "Mar",
+            "Apr",
             "May",
-            "June",
-            "July",
-            "August",
-            "September",
-            "October",
-            "November",
-            "December",
+            "Jun",
+            "Jul",
+            "Aug",
+            "Sepr",
+            "Oct",
+            "Nov",
+            "Dec",
           ];
-          let currentDate =
-            d.getDate() +
-            monthNames[d.getMonth()].slice(0, 3) +
-            d.getFullYear();
-          console.log(currentDate);
+
+          let currentDate = new Date(
+            `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`
+          );
+          currentDate.setHours(0, 0, 0, 0);
+          console.log("Today:", currentDate);
+
+          let givenDate = orders[1].expiryDate;
+
+          let providedDate = new Date(
+            `${givenDate.slice(-4)}-${
+              monthNames.indexOf(givenDate.slice(3, 6)) + 1
+            }-${givenDate.slice(0, 2)}
+            `
+          );
+          providedDate.setHours(0, 0, 0, 0);
+          console.log(providedDate);
+          console.log(providedDate < currentDate);
+
+          orders
+            .filter(
+              (item) =>
+                new Date(
+                  `${item.expiryDate.slice(-4)}-${
+                    monthNames.indexOf(item.expiryDate.slice(3, 6)) + 1
+                  }-${item.expiryDate.slice(0, 2)}`
+                ) < currentDate
+            )
+            .map((item) => {
+              console.log(item.expiryDate);
+              let tr = ` <tr class="data">
+                <td class="userid">${item.id}</td>
+                <td class="name">${item.medicineName}</td>
+                <td class="brand">${item.medicineBrand}</td>
+                <td class="date">
+                  ${item.expiryDate.slice(0, 2)} 
+                  ${item.expiryDate.slice(3, 6)}, ${item.expiryDate.slice(7)}
+                </td>
+                <td class="amount">$${item.unitPrice}</td>
+                <td class="status">${item.stock}</td>
+              </tr>`;
+              tbody.innerHTML += tr;
+            });
         } else if (checkbox[1].checked) {
           tbody.innerHTML = "";
           orders
@@ -78,6 +117,9 @@ async function fetchData() {
         } else if (!checkbox[0].checked && !checkbox[1].checked) {
           tbody.innerHTML = "";
         }
+        count.innerHTML = `Count: ${
+          document.getElementsByTagName("tr").length - 1
+        }`;
       });
     }
 
@@ -99,10 +141,10 @@ async function fetchData() {
                           <td class="status">${item.stock}</td>
                         </tr>`;
       tbody.innerHTML += tr;
+      count.innerHTML = `Count: ${
+        document.getElementsByTagName("tr").length - 1
+      }`;
     });
-    count.innerHTML = `Count: ${
-      document.getElementsByTagName("tr").length - 1
-    }`;
   } catch (err) {
     console.log(err);
   }
