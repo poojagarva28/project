@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="common.css" rel="stylesheet" type="text/css" />
+    <link href="order.css" rel="stylesheet" type="text/css" />
+    <title>Order</title>
+  </head>
+  <body>
+    <header>
+      <div class="logosec">
+        <img
+          src="https://edu-web-fundamentals.web.app/static/media/logo.58169365.png"
+          alt="Image"
+        />
+        <span class="logotext">Kafene</span>
+      </div>
+      <nav>
+        <ul>
+          <li class="active"><a href="#">Orders</a></li>
+          <li><a href="#">Products</a></li>
+          <li><a href="#">Users</a></li>
+          <li><a href="#">Logout</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h1>Orders</h1>
+      <section>
+        <div class="filterouter">
+          <div class="filtersection">
+            <h3>Filters</h3>
+            <p id="count"></p>
+            <div class="optionssection">
+              <form>
+                <div>
+                  <input
+                    type="checkbox"
+                    name="filterorders"
+                    id="new"
+                    value="New"
+                    checked
+                  />
+                  <label for="new">New</label>
+                </div>
+                <div>
+                  <input
+                    type="checkbox"
+                    name="filterorders"
+                    id="packed"
+                    value="Packed"
+                    checked
+                  />
+                  <label for="packed">Packed</label>
+                </div>
+                <div>
+                  <input
+                    type="checkbox"
+                    name="filterorders"
+                    id="intransit"
+                    value="InTransit"
+                    checked
+                  />
+                  <label for="intransit">InTransit</label>
+                </div>
+                <div>
+                  <input
+                    type="checkbox"
+                    name="filterorders"
+                    id="delivered"
+                    value="Delivered"
+                    checked
+                  />
+                  <label for="delivered">Delivered</label>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="tableouter">
+          <div class="tablesection">
+            <table width="100%" cellspacing="0">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Customer</th>
+                  <th>Date</th>
+                  <th>Amount</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="tbody"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="order.js"></script>
+  </body>
+</html>

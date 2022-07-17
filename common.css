@@ -1,0 +1,96 @@
+* {
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f6f7fb;
+}
+a {
+  text-decoration: none;
+}
+
+/* header */
+header {
+  width: 100%;
+  padding: 0 48px;
+  box-sizing: border-box;
+  position: fixed;
+  box-shadow: 0 2px 4px #ccc;
+  background-color: #fff;
+  justify-content: flex-start;
+  display: flex;
+  align-items: center;
+}
+header img {
+  width: 24px;
+  height: 28px;
+  margin-right: 8px;
+}
+header .logotext {
+  font-size: 24px;
+  letter-spacing: -1px;
+  font-weight: 500;
+  margin: 0;
+  color: rgba(0, 0, 0, 0.8);
+}
+header nav ul {
+  display: flex;
+  list-style-type: none;
+  align-items: center;
+}
+header .logosec {
+  display: flex;
+  align-items: center;
+}
+header nav ul li a {
+  color: rgba(0, 0, 0, 0.8);
+  padding: 24px 0 16px;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.6px;
+  margin: 0 10px;
+  -webkit-font-smoothing: antialiased;
+}
+header nav ul li.active a {
+  color: #20b883;
+  border-bottom: 3px solid #20b883;
+}
+
+/* main css for inner pages */
+main {
+  width: 100%;
+  padding: 6% 6%;
+}
+main h3 {
+  margin: 0;
+}
+main .filtersection .optionssection form div {
+  margin: 12px 0;
+}
+section {
+  display: flex;
+}
+.filterouter {
+  width: 15%;
+}
+.tableouter {
+  width: 85%;
+}
+tr {
+  border-collapse: collapse;
+}
+th {
+  text-align: left;
+  padding: 12px 24px;
+  font-size: 14px;
+}
+td {
+  background-color: #fff;
+  border-bottom: 4px solid #f6f7fb;
+  text-align: left;
+  padding: 12px 24px;
+  font-size: 14px;
+}

@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+.loginform {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 6px;
+  background-color: #fff;
+  margin: 0 auto;
+  padding: 32px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 6px #ccc;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -75%);
+}
+.loginform h1 {
+  letter-spacing: 1px;
+  font-weight: 500;
+  margin: 0 0 24px;
+}
+.loginform input {
+  width: 100%;
+  padding-top: 16px;
+  font-size: 14px;
+  box-sizing: border-box;
+  border: 0;
+  border-bottom: 2px solid #8c8c8c;
+  margin-bottom: 16px;
+  outline: none;
+}
+.loginform input[type="submit"] {
+  display: inline-block;
+  border-radius: 30px;
+  padding: 14px 36px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  background-color: #20b883;
+  color: #fff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  margin-top: 24px;
+}
