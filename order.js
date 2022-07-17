@@ -44,7 +44,7 @@ async function fetchData() {
             console.log(arr);
           }
           orders
-            .filter((item) => arr.includes(item.orderStatus))
+            .filter((item) => arr.includes(item.orderStatus.toLowerCase()))
             .map((item) => {
               let tr = ` <tr class="data">
                 <td class="userid">${item.id}</td>
@@ -69,16 +69,14 @@ async function fetchData() {
     let arr = [];
     for (let i = 0; i < checkbox.length; i++) {
       if (checkbox[i].checked) {
-        arr.push(
-          checkbox[i].id.charAt(0).toUpperCase() + checkbox[i].id.slice(1)
-        );
+        arr.push(checkbox[i].id.toLowerCase());
       }
       console.log(arr);
     }
 
     //
     orders
-      .filter((item) => arr.includes(item.orderStatus))
+      .filter((item) => arr.includes(item.orderStatus.toLowerCase()))
       .map((item) => {
         let tr = ` <tr class="data">
                 <td class="userid">${item.id}</td>
@@ -93,6 +91,9 @@ async function fetchData() {
               </tr>`;
         tbody.innerHTML += tr;
       });
+    count.innerHTML = `Count: ${
+      document.getElementsByTagName("tr").length - 1
+    }`;
   } catch (err) {
     console.log(err);
   }
