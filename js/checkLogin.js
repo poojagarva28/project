@@ -1,4 +1,7 @@
-if (localStorage.getItem("loginStatus") === "false") {
+if (
+  localStorage.getItem("loginStatus") === "false" ||
+  localStorage.length === 0
+) {
   window.location.href = "./index.html";
   window.alert("Please Login First");
 }
