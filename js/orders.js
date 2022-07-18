@@ -21,14 +21,14 @@ async function fetchData() {
             )
             .map((item) => {
               let tr = ` <tr class="data">
-                  <td class="userid">${item.id}</td>
+                  <td class="gray">${item.id}</td>
                   <td class="name">${item.customerName}</td>
                   <td class="date">
                     ${item.orderDate.slice(0, 2)} 
                     ${item.orderDate.slice(3, 6)}, ${item.orderDate.slice(7)}
-                <br /><span class="time">${item.orderTime}</span>
+                <br /><span class="gray">${item.orderTime}</span>
                   </td>
-                  <td class="amount">$${item.amount}</td>
+                  <td class="gray">$${item.amount}</td>
                   <td class="status">${item.orderStatus}</td>
                 </tr>`;
               tbody.innerHTML += tr;
@@ -41,20 +41,20 @@ async function fetchData() {
             if (checkbox[i].checked) {
               arr.push(checkbox[i].id);
             }
-            console.log(arr);
+            // console.log(arr);
           }
           orders
             .filter((item) => arr.includes(item.orderStatus.toLowerCase()))
             .map((item) => {
               let tr = ` <tr class="data">
-                <td class="userid">${item.id}</td>
+                <td class="gray">${item.id}</td>
                 <td class="name">${item.customerName}</td>
                 <td class="date">
                   ${item.orderDate.slice(0, 2)}
                   ${item.orderDate.slice(3, 6)}, ${item.orderDate.slice(7)}
-              <br /><span class="time">${item.orderTime}</span>
+              <br /><span class="gray">${item.orderTime}</span>
                 </td>
-                <td class="amount">$${item.amount}</td>
+                <td class="gray">$${item.amount}</td>
                 <td class="status">${item.orderStatus}</td>
               </tr>`;
               tbody.innerHTML += tr;
@@ -71,7 +71,7 @@ async function fetchData() {
       if (checkbox[i].checked) {
         arr.push(checkbox[i].id.toLowerCase());
       }
-      console.log(arr);
+      // console.log(arr);
     }
 
     //
@@ -79,18 +79,19 @@ async function fetchData() {
       .filter((item) => arr.includes(item.orderStatus.toLowerCase()))
       .map((item) => {
         let tr = ` <tr class="data">
-                <td class="userid">${item.id}</td>
+                <td class="gray">${item.id}</td>
                 <td class="name">${item.customerName}</td>
                 <td class="date">
                   ${item.orderDate.slice(0, 2)}
                   ${item.orderDate.slice(3, 6)}, ${item.orderDate.slice(7)}
-              <br /><span class="time">${item.orderTime}</span>
+              <br /><span class="gray">${item.orderTime}</span>
                 </td>
-                <td class="amount">$${item.amount}</td>
+                <td class="gray">$${item.amount}</td>
                 <td class="status">${item.orderStatus}</td>
               </tr>`;
         tbody.innerHTML += tr;
       });
+
     count.innerHTML = `Count: ${
       document.getElementsByTagName("tr").length - 1
     }`;

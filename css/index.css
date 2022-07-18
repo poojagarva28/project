@@ -45,3 +45,8 @@
   cursor: pointer;
   margin-top: 24px;
 }
+
+/* navigation last child */
+header ul li:last-child a {
+  position: initial;
+}

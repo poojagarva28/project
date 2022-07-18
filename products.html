@@ -4,25 +4,26 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="common.css" rel="stylesheet" type="text/css" />
-    <link href="order.css" rel="stylesheet" type="text/css" />
+    <link href="./css/common.css" rel="stylesheet" type="text/css" />
     <title>Order</title>
   </head>
   <body>
     <header>
       <div class="logosec">
-        <img
-          src="https://edu-web-fundamentals.web.app/static/media/logo.58169365.png"
-          alt="Image"
-        />
-        <span class="logotext">Kafene</span>
+        <a href="#" id="action">
+          <img
+            src="https://edu-web-fundamentals.web.app/static/media/logo.58169365.png"
+            alt="Image"
+          />
+          <span class="logotext">Kafene</span>
+        </a>
       </div>
       <nav>
         <ul>
-          <li><a href="#">Orders</a></li>
-          <li class="active"><a href="#">Products</a></li>
-          <li><a href="#">Users</a></li>
-          <li><a href="#">Logout</a></li>
+          <li><a href="./orders.html">Orders</a></li>
+          <li class="active"><a href="./products.html">Products</a></li>
+          <li><a href="./users.html">Users</a></li>
+          <li><a href="#" id="logout">Logout</a></li>
         </ul>
       </nav>
     </header>
@@ -78,6 +79,8 @@
         </div>
       </section>
     </main>
-    <script src="products.js"></script>
+    <script src="./js/products.js"></script>
+    <script src="./js/checklogin.js"></script>
+    <script src="./js/logout.js"></script>
   </body>
 </html>

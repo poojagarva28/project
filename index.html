@@ -4,24 +4,26 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="common.css" rel="stylesheet" type="text/css" />
-    <link href="index.css" rel="stylesheet" type="text/css" />
+    <link href="./css/common.css" rel="stylesheet" type="text/css" />
+    <link href="./css/index.css" rel="stylesheet" type="text/css" />
     <title>Kafene</title>
   </head>
   <body>
     <header>
       <div class="logosec">
-        <img
-          src="https://edu-web-fundamentals.web.app/static/media/logo.58169365.png"
-          alt="Image"
-        />
-        <span class="logotext">Kafene</span>
+        <a href="index.html" id="action">
+          <img
+            src="https://edu-web-fundamentals.web.app/static/media/logo.58169365.png"
+            alt="Image"
+          />
+          <span class="logotext">Kafene</span>
+        </a>
       </div>
       <nav>
         <ul>
-          <li><a href="#">Orders</a></li>
-          <li><a href="#">Products</a></li>
-          <li><a href="#">Users</a></li>
+          <li><a href="./orders.html">Orders</a></li>
+          <li><a href="./products.html">Products</a></li>
+          <li><a href="./users.html">Users</a></li>
         </ul>
       </nav>
     </header>
@@ -31,6 +33,7 @@
       <input type="password" placeholder="Enter Password" id="password" />
       <input type="submit" value="Login" id="loginbtn" />
     </div>
-    <script src="index.js"></script>
+    <script src="./js/index.js"></script>
+    <!-- <script src="./js/checklogin.js"></script> -->
   </body>
 </html>

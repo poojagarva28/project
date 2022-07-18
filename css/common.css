@@ -28,6 +28,8 @@ header img {
   width: 24px;
   height: 28px;
   margin-right: 8px;
+  top: 6px;
+  position: relative;
 }
 header .logotext {
   font-size: 24px;
@@ -93,4 +95,17 @@ td {
   text-align: left;
   padding: 12px 24px;
   font-size: 14px;
+}
+/* diff color td item */
+.gray {
+  color: #8c8c8c;
+}
+.time {
+  font-size: 14px;
+}
+/*logout*/
+header ul li:last-child a {
+  position: absolute;
+  top: -7px;
+  right: 48px;
 }

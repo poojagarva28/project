@@ -16,53 +16,56 @@ async function fetchData() {
           alert("Please enter atleast 2 characters");
           showData();
         } else {
+          if (
+            users.filter(
+              (item) =>
+                item.fullName
+                  .toLowerCase()
+                  .includes(searchQuery.toLowerCase()) === -1
+            )
+          ) {
+            tbody.innerHTML = "";
+          }
+
           users
             .filter((item) =>
               item.fullName.toLowerCase().includes(searchQuery.toLowerCase())
             )
             .map((item) => {
               console.log(item);
-              tbody.innerHTML = "";
               let tr = ` <tr class="data">
                           <td class="userid">${item.id}</td>
                           <td class="name"><img src="${
                             item.profilePic
                           }" alt="Profile image ${item.id}"/></td>
-                          <td class="brand">${item.fullName}</td>
+                          <td class="gray">${item.fullName}</td>
                           <td class="date"> ${item.dob.slice(0, 2)} 
                           ${item.dob.slice(3, 6)}, ${item.dob.slice(7)}</td>
-                          <td class="amount">$${item.gender}</td>
-                          <td class="status">${item.currentCity} ${
-                item.currentContry
+                          <td class="gray">${item.gender}</td>
+                          <td class="gray">${item.currentCity} ${
+                item.currentCountry
               }</td>
                         </tr>`;
               tbody.innerHTML += tr;
             });
-          if (
-            users.filter(
-              (item) =>
-                !item.fullName.toLowerCase().includes(searchQuery.toLowerCase())
-            )
-          ) {
-            tbody.innerHTML = "";
-          }
         }
       }
     });
     showData();
     function showData() {
+      tbody.innerHTML = "";
       users.map((item) => {
         let tr = ` <tr class="data">
                             <td class="userid">${item.id}</td>
-                            <td class="name"><img src="${
+                            <td class="gray"><img src="${
                               item.profilePic
                             }" alt="Profile image ${item.id}"/></td>
-                            <td class="brand">${item.fullName}</td>
+                            <td class="gray">${item.fullName}</td>
                             <td class="date"> ${item.dob.slice(0, 2)} 
                             ${item.dob.slice(3, 6)}, ${item.dob.slice(7)}</td>
-                            <td class="amount">$${item.gender}</td>
-                            <td class="status">${item.currentCity} ${
-          item.currentContry
+                            <td class="gray">${item.gender}</td>
+                            <td class="gray">${item.currentCity}, ${
+          item.currentCountry
         }</td>
                           </tr>`;
         tbody.innerHTML += tr;
